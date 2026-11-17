@@ -1,0 +1,478 @@
+{
+  "benchmark_name": "Helix AI 25-Question Biomedical Literature-to-Dataset Benchmark",
+  "version": "1.0.0",
+  "design_notes": "All 25 research queries are strictly separated from the 5 development queries. Includes 23 PubMed-GEO linked studies and 2 literature-only negative controls (BENCH-23, BENCH-24).",
+  "questions": [
+    {
+      "id": "BENCH-01",
+      "domain": "Neuro-Oncology",
+      "query": "Single-cell RNA sequencing intratumoral heterogeneity in primary glioblastoma",
+      "expected_pmids": [
+        "24925914"
+      ],
+      "expected_gse_accessions": [
+        "GSE57872"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Primary glioblastoma",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Single-cell RNA sequencing",
+        "genes_or_biomarkers": "EGFR, PDGFRA, NF1"
+      },
+      "expected_evidence": "We used single-cell RNA-seq to profile 430 cells from five primary glioblastomas and uncovered inherent intratumoral heterogeneity in oncogenic signaling.",
+      "reference_answer": "Single-cell RNA sequencing of 430 cells across five primary human glioblastomas (GSE57872, PMID 24925914) reveals mosaic expression of receptor tyrosine kinases including EGFR and PDGFRA."
+    },
+    {
+      "id": "BENCH-02",
+      "domain": "Hematologic Malignancies",
+      "query": "Gene expression profiling of acute myeloid leukemia with FLT3-ITD mutations",
+      "expected_pmids": [
+        "15077127"
+      ],
+      "expected_gse_accessions": [
+        "GSE1159"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Acute myeloid leukemia",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Oligonucleotide microarray gene expression profiling",
+        "genes_or_biomarkers": "FLT3, NPM1, CEBPA"
+      },
+      "expected_evidence": "Gene-expression profiling of 285 patients with acute myeloid leukemia identified distinct molecular clusters associated with FLT3 internal tandem duplications.",
+      "reference_answer": "Microarray profiling of 285 AML patient samples (GSE1159, PMID 15077127) stratifies acute myeloid leukemia into reproducible prognostic subtypes linked to FLT3 and CEBPA alterations."
+    },
+    {
+      "id": "BENCH-03",
+      "domain": "Pulmonology",
+      "query": "Transcriptional profiling of idiopathic pulmonary fibrosis lung tissue",
+      "expected_pmids": [
+        "21974901"
+      ],
+      "expected_gse_accessions": [
+        "GSE32537"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Idiopathic pulmonary fibrosis",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Whole-genome gene expression microarray",
+        "genes_or_biomarkers": "MMP7, COL1A1, TGFB1"
+      },
+      "expected_evidence": "Transcriptional profiling of lung tissues from 119 idiopathic pulmonary fibrosis patients revealed upregulation of extracellular matrix remodeling genes including MMP7 and COL1A1.",
+      "reference_answer": "Lung tissue transcriptomics in 119 IPF cases (GSE32537, PMID 21974901) demonstrates robust activation of TGF-beta and extracellular matrix remodeling genes such as MMP7 and COL1A1."
+    },
+    {
+      "id": "BENCH-04",
+      "domain": "Autoimmune Rheumatology",
+      "query": "Type I interferon gene expression signature in systemic lupus erythematosus",
+      "expected_pmids": [
+        "12601032"
+      ],
+      "expected_gse_accessions": [
+        "GSE4588"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Systemic lupus erythematosus",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Peripheral blood mononuclear cell microarray analysis",
+        "genes_or_biomarkers": "IFI27, IFIT1, MX1"
+      },
+      "expected_evidence": "Peripheral blood mononuclear cells from patients with systemic lupus erythematosus exhibit a prominent type I interferon-inducible gene expression signature.",
+      "reference_answer": "PBMC expression profiling in systemic lupus erythematosus (GSE4588, PMID 12601032) identifies a conserved type I interferon signature driven by IFI27, IFIT1, and MX1."
+    },
+    {
+      "id": "BENCH-05",
+      "domain": "Neurodegeneration",
+      "query": "Substantia nigra gene expression changes in sporadic Parkinson disease",
+      "expected_pmids": [
+        "16344956"
+      ],
+      "expected_gse_accessions": [
+        "GSE7621"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Sporadic Parkinson disease",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Postmortem substantia nigra microarray profiling",
+        "genes_or_biomarkers": "SNCA, TH, PARK2"
+      },
+      "expected_evidence": "Gene expression analysis of postmortem substantia nigra tissue from Parkinson disease patients demonstrated downregulation of dopaminergic transmission genes.",
+      "reference_answer": "Postmortem substantia nigra transcriptomics in sporadic Parkinson disease (GSE7621, PMID 16344956) shows reduced expression of dopaminergic pathway transcripts alongside mitochondrial stress."
+    },
+    {
+      "id": "BENCH-06",
+      "domain": "Gastrointestinal Oncology",
+      "query": "Transcriptomic subtyping of microsatellite instability in colorectal cancer",
+      "expected_pmids": [
+        "26457759"
+      ],
+      "expected_gse_accessions": [
+        "GSE39582"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Colorectal cancer",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Consensus molecular subtype transcriptomic classification",
+        "genes_or_biomarkers": "MLH1, BRAF, CD274"
+      },
+      "expected_evidence": "Consensus molecular subtyping of colorectal cancer integrated transcriptomic datasets including GSE39582 to define the MSI immune subtype CMS1.",
+      "reference_answer": "Multi-cohort colorectal cancer transcriptomics incorporating GSE39582 (PMID 26457759) defines four consensus molecular subtypes, linking MSI-high tumors to strong immune infiltration."
+    },
+    {
+      "id": "BENCH-07",
+      "domain": "Nephrology",
+      "query": "Tubulointerstitial gene expression in diabetic chronic kidney disease",
+      "expected_pmids": [
+        "21752957"
+      ],
+      "expected_gse_accessions": [
+        "GSE30122"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Diabetic kidney disease",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Microdissected glomeruli and tubuli microarray profiling",
+        "genes_or_biomarkers": "C3, VCAM1, COL4A1"
+      },
+      "expected_evidence": "Microarray analysis of microdissected human diabetic kidney samples in GSE30122 identified complement activation and fibrotic pathway enrichment.",
+      "reference_answer": "Microdissected renal compartment profiling in diabetic nephropathy (GSE30122, PMID 21752957) reveals prominent complement cascade and extracellular matrix gene induction."
+    },
+    {
+      "id": "BENCH-08",
+      "domain": "Critical Care & Infectious Disease",
+      "query": "Whole-blood host transcriptomic response in pediatric septic shock",
+      "expected_pmids": [
+        "19325468"
+      ],
+      "expected_gse_accessions": [
+        "GSE13904"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Pediatric septic shock",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Whole-blood genome-wide expression profiling",
+        "genes_or_biomarkers": "MMP8, LCN2, IL1R2"
+      },
+      "expected_evidence": "Genome-wide expression profiling of whole blood from children with septic shock (GSE13904) revealed repression of adaptive immunity genes and innate inflammation activation.",
+      "reference_answer": "Whole-blood transcriptomics in pediatric septic shock (GSE13904, PMID 19325468) demonstrates coordinated innate immune activation and suppression of T-cell receptor signaling."
+    },
+    {
+      "id": "BENCH-09",
+      "domain": "Immuno-Oncology",
+      "query": "Transcriptomic predictors of anti-PD-1 checkpoint blockade response in metastatic melanoma",
+      "expected_pmids": [
+        "26997480"
+      ],
+      "expected_gse_accessions": [
+        "GSE78220"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Metastatic melanoma",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Pretreatment tumor RNA sequencing",
+        "genes_or_biomarkers": "AXL, ROR2, WNT5A"
+      },
+      "expected_evidence": "Transcriptomic analysis of pretreatment melanoma biopsies (GSE78220) identified an innate anti-PD-1 resistance signature enriched in mesenchymal and wound-healing genes.",
+      "reference_answer": "RNA-seq of pretreatment metastatic melanoma tumors (GSE78220, PMID 26997480) associates innate anti-PD-1 resistance with an IPRES transcriptional signature."
+    },
+    {
+      "id": "BENCH-10",
+      "domain": "Pancreatic Oncology",
+      "query": "Stromal and tumor molecular subtypes in pancreatic ductal adenocarcinoma",
+      "expected_pmids": [
+        "26343385"
+      ],
+      "expected_gse_accessions": [
+        "GSE71729"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Pancreatic ductal adenocarcinoma",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Virtual microdissection of primary and metastatic PDAC microarrays",
+        "genes_or_biomarkers": "KRT81, GATA6, FAP"
+      },
+      "expected_evidence": "Virtual microdissection of pancreatic ductal adenocarcinoma gene expression data (GSE71729) identified basal-like and classical tumor subtypes alongside normal and activated stroma.",
+      "reference_answer": "Transcriptomic deconvolution of pancreatic ductal adenocarcinoma (GSE71729, PMID 26343385) separates tumor-intrinsic classical/basal subtypes from stromal subtypes."
+    },
+    {
+      "id": "BENCH-11",
+      "domain": "Cardiology",
+      "query": "Myocardial gene expression remodeling in human dilated cardiomyopathy",
+      "expected_pmids": [
+        "24565855"
+      ],
+      "expected_gse_accessions": [
+        "GSE5406"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Dilated cardiomyopathy",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Left ventricular myocardium microarray analysis",
+        "genes_or_biomarkers": "NPPA, NPPB, MYH7"
+      },
+      "expected_evidence": "Expression profiling of failing human left ventricular myocardium (GSE5406) demonstrated consistent upregulation of natriuretic peptides NPPA and NPPB.",
+      "reference_answer": "Human failing myocardium transcriptomics (GSE5406, PMID 24565855) reveals conserved fetal gene program reactivation including NPPA, NPPB, and sarcomeric remodeling."
+    },
+    {
+      "id": "BENCH-12",
+      "domain": "Respiratory Medicine",
+      "query": "Airway epithelial gene expression signatures in severe asthma",
+      "expected_pmids": [
+        "23601105"
+      ],
+      "expected_gse_accessions": [
+        "GSE43696"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Severe asthma",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Bronchial epithelial brushing microarray profiling",
+        "genes_or_biomarkers": "POSTN, CLCA1, SERPINB2"
+      },
+      "expected_evidence": "Gene expression profiling of bronchial epithelial cells from asthma patients (GSE43696) identified Th2-high and Th2-low molecular endotypes.",
+      "reference_answer": "Bronchial epithelial transcriptomics in asthma (GSE43696, PMID 23601105) stratifies patients by Th2 inflammation markers POSTN, CLCA1, and SERPINB2."
+    },
+    {
+      "id": "BENCH-13",
+      "domain": "Virology & Host Response",
+      "query": "Nasopharyngeal host transcriptional response to SARS-CoV-2 infection",
+      "expected_pmids": [
+        "32416070"
+      ],
+      "expected_gse_accessions": [
+        "GSE147507"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "COVID-19",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Bulk RNA sequencing of infected respiratory cells and patient samples",
+        "genes_or_biomarkers": "ACE2, CXCL10, IL6"
+      },
+      "expected_evidence": "Transcriptional profiling of SARS-CoV-2 infection models and patient samples (GSE147507) showed reduced type I/III interferon induction alongside elevated chemokine expression.",
+      "reference_answer": "Host transcriptomic profiling of SARS-CoV-2 infection (GSE147507, PMID 32416070) demonstrates an imbalanced antiviral response characterized by low IFN-I/III and high CXCL10/IL6."
+    },
+    {
+      "id": "BENCH-14",
+      "domain": "Epigenetics & Stem Cell Biology",
+      "query": "Transcriptional dynamics during human induced pluripotent stem cell reprogramming",
+      "expected_pmids": [
+        "20473322"
+      ],
+      "expected_gse_accessions": [
+        "GSE21757"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Cellular reprogramming to pluripotency",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Time-course microarray gene expression analysis",
+        "genes_or_biomarkers": "POU5F1, SOX2, NANOG"
+      },
+      "expected_evidence": "Time-course expression profiling during somatic cell reprogramming (GSE21757) delineated sequential mesenchymal-to-epithelial transition and pluripotency network activation.",
+      "reference_answer": "Reprogramming time-course transcriptomics (GSE21757, PMID 20473322) maps early suppression of somatic genes followed by activation of POU5F1, SOX2, and NANOG."
+    },
+    {
+      "id": "BENCH-15",
+      "domain": "Inflammatory Bowel Disease",
+      "query": "Colonic mucosal gene expression in ulcerative colitis anti-TNF therapy resistance",
+      "expected_pmids": [
+        "19956723"
+      ],
+      "expected_gse_accessions": [
+        "GSE16879"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Ulcerative colitis",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Colonic mucosal biopsy microarray profiling before and after infliximab",
+        "genes_or_biomarkers": "IL13RA2, OSM, TNF"
+      },
+      "expected_evidence": "Mucosal gene expression profiling in inflammatory bowel disease patients treated with infliximab (GSE16879) identified predictive signatures of anti-TNF non-response.",
+      "reference_answer": "Mucosal biopsy profiling before and after infliximab therapy (GSE16879, PMID 19956723) identifies inflammatory gene signatures distinguishing responders from non-responders."
+    },
+    {
+      "id": "BENCH-16",
+      "domain": "Metabolic Disease & Obesity",
+      "query": "Subcutaneous adipose tissue transcriptomics in human insulin resistance",
+      "expected_pmids": [
+        "21378177"
+      ],
+      "expected_gse_accessions": [
+        "GSE27951"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Obesity-associated insulin resistance",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Adipose tissue microarray profiling",
+        "genes_or_biomarkers": "ADIPOQ, LEP, CCL2"
+      },
+      "expected_evidence": "Subcutaneous adipose tissue expression profiling (GSE27951) revealed macrophage inflammatory infiltration and downregulation of mitochondrial oxidative genes in insulin-resistant subjects.",
+      "reference_answer": "Human adipose tissue transcriptomics (GSE27951, PMID 21378177) links insulin resistance to macrophage chemokine CCL2 induction and reduced adiponectin expression."
+    },
+    {
+      "id": "BENCH-17",
+      "domain": "Dermatology & Oncology",
+      "query": "Gene expression profiling of cutaneous squamous cell carcinoma progression",
+      "expected_pmids": [
+        "21576308"
+      ],
+      "expected_gse_accessions": [
+        "GSE2503"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Cutaneous squamous cell carcinoma",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Oligonucleotide microarray analysis of actinic keratosis and SCC",
+        "genes_or_biomarkers": "KRT16, S100A8, MMP1"
+      },
+      "expected_evidence": "Gene expression analysis comparing normal skin, actinic keratosis, and invasive cutaneous squamous cell carcinoma (GSE2503) highlighted keratinocyte hyperproliferation markers.",
+      "reference_answer": "Transcriptomic profiling across skin carcinogenesis stages (GSE2503, PMID 21576308) identifies progressive upregulation of S100A8, KRT16, and matrix metalloproteinases."
+    },
+    {
+      "id": "BENCH-18",
+      "domain": "Hematology & Immunology",
+      "query": "Transcriptional landscape of human regulatory T cells versus conventional CD4+ T cells",
+      "expected_pmids": [
+        "17277771"
+      ],
+      "expected_gse_accessions": [
+        "GSE6566"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Immune tolerance and T-cell differentiation",
+        "organism": "Mus musculus",
+        "experimental_methodology": "Sorted CD4+Foxp3+ T-cell microarray profiling",
+        "genes_or_biomarkers": "Foxp3, Il2ra, Ctla4"
+      },
+      "expected_evidence": "Gene expression profiling of Foxp3+ regulatory T cells (GSE6566) defined the core Foxp3-dependent transcriptional program governing immune suppression.",
+      "reference_answer": "Expression analysis of sorted Foxp3+ Tregs (GSE6566, PMID 17277771) establishes the Foxp3-regulated signature including Il2ra and Ctla4."
+    },
+    {
+      "id": "BENCH-19",
+      "domain": "Ovarian Oncology",
+      "query": "Molecular subtypes and survival signatures in high-grade serous ovarian cancer",
+      "expected_pmids": [
+        "18698038"
+      ],
+      "expected_gse_accessions": [
+        "GSE9891"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "High-grade serous ovarian cancer",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Microarray expression profiling of 285 ovarian tumors",
+        "genes_or_biomarkers": "BRCA1, TP53, POSTN"
+      },
+      "expected_evidence": "Expression profiling of 285 serous and endometrioid ovarian tumors (GSE9891) identified novel molecular subtypes predictive of patient survival.",
+      "reference_answer": "Ovarian tumor microarray profiling of 285 cases (GSE9891, PMID 18698038) defines six molecular subtypes with distinct stromal and survival characteristics."
+    },
+    {
+      "id": "BENCH-20",
+      "domain": "Musculoskeletal Biology",
+      "query": "Skeletal muscle transcriptomic response to aerobic endurance exercise training",
+      "expected_pmids": [
+        "20107036"
+      ],
+      "expected_gse_accessions": [
+        "GSE18583"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Skeletal muscle adaptation to endurance exercise",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Vastus lateralis muscle biopsy microarray profiling",
+        "genes_or_biomarkers": "PPARGC1A, VEGFA, COL3A1"
+      },
+      "expected_evidence": "Skeletal muscle biopsy gene expression profiling before and after endurance training (GSE18583) identified an extracellular matrix remodeling signature correlating with VO2max gains.",
+      "reference_answer": "Human vastus lateralis transcriptomics (GSE18583, PMID 20107036) links aerobic capacity gains to coordinated angiogenesis and extracellular matrix remodeling."
+    },
+    {
+      "id": "BENCH-21",
+      "domain": "Prostate Oncology",
+      "query": "Integrative genomic and transcriptomic profiling of primary and metastatic prostate cancer",
+      "expected_pmids": [
+        "20579941"
+      ],
+      "expected_gse_accessions": [
+        "GSE21032"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Prostate cancer",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Exon microarray and copy-number profiling of 218 prostate tumors",
+        "genes_or_biomarkers": "AR, ERG, PTEN"
+      },
+      "expected_evidence": "Integrative genomic profiling of 218 primary and metastatic prostate cancer samples (GSE21032) demonstrated ubiquitous androgen receptor pathway alterations in metastases.",
+      "reference_answer": "Integrative profiling of 218 prostate tumors (GSE21032, PMID 20579941) highlights recurrent AR pathway activation, TMPRSS2-ERG fusion, and PTEN loss."
+    },
+    {
+      "id": "BENCH-22",
+      "domain": "Ophthalmology",
+      "query": "Retinal pigment epithelium and choroid gene expression in age-related macular degeneration",
+      "expected_pmids": [
+        "22253606"
+      ],
+      "expected_gse_accessions": [
+        "GSE29801"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Age-related macular degeneration",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Human donor retina and RPE-choroid microarray profiling",
+        "genes_or_biomarkers": "CFH, VEGFA, C3"
+      },
+      "expected_evidence": "Genome-wide expression profiling of human macular and extramacular RPE-choroid tissues (GSE29801) implicated complement and immune-response genes in age-related macular degeneration.",
+      "reference_answer": "Human ocular tissue transcriptomics (GSE29801, PMID 22253606) reveals localized complement cascade and inflammatory gene enrichment in macular degeneration."
+    },
+    {
+      "id": "BENCH-23",
+      "domain": "Literature-Only Control (No GEO Dataset)",
+      "query": "Clinical trial outcomes of metformin monotherapy in newly diagnosed gestational diabetes",
+      "expected_pmids": [
+        "18463376"
+      ],
+      "expected_gse_accessions": [],
+      "expected_extractions": {
+        "disease_or_condition": "Gestational diabetes mellitus",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Randomized open-label clinical trial",
+        "genes_or_biomarkers": "Unavailable in source text"
+      },
+      "expected_evidence": "In women with gestational diabetes mellitus, metformin was not associated with increased perinatal complications compared with insulin.",
+      "reference_answer": "Randomized clinical trial of 751 women with gestational diabetes (PMID 18463376) demonstrates comparable perinatal safety for metformin versus insulin with no associated GEO expression dataset."
+    },
+    {
+      "id": "BENCH-24",
+      "domain": "Literature-Only Control (No GEO Dataset)",
+      "query": "CRISPR-Cas9 base editing mechanism without high-throughput expression dataset",
+      "expected_pmids": [
+        "27096365"
+      ],
+      "expected_gse_accessions": [],
+      "expected_extractions": {
+        "disease_or_condition": "Programmable single-base genome editing",
+        "organism": "Escherichia coli and Homo sapiens cells",
+        "experimental_methodology": "Cytidine deaminase-dCas9 fusion protein engineering and Sanger/amplicon sequencing",
+        "genes_or_biomarkers": "APOBEC1, Cas9"
+      },
+      "expected_evidence": "We engineered fusions of CRISPR-Cas9 and a cytidine deaminase enzyme that mediate the direct conversion of cytidine to uridine without double-stranded DNA breaks.",
+      "reference_answer": "Programmable base editing using APOBEC1-dCas9 fusions (PMID 27096365) enables direct C-to-T conversion without double-strand breaks and has no associated GEO microarray/RNA-seq dataset."
+    },
+    {
+      "id": "BENCH-25",
+      "domain": "Thyroid Oncology",
+      "query": "Gene expression profiling of BRAF V600E mutated papillary thyroid carcinoma",
+      "expected_pmids": [
+        "16365291"
+      ],
+      "expected_gse_accessions": [
+        "GSE3467"
+      ],
+      "expected_extractions": {
+        "disease_or_condition": "Papillary thyroid carcinoma",
+        "organism": "Homo sapiens",
+        "experimental_methodology": "Paired tumor and normal thyroid microarray profiling",
+        "genes_or_biomarkers": "BRAF, MET, FN1"
+      },
+      "expected_evidence": "Gene expression profiling of paired papillary thyroid carcinoma and normal thyroid tissues (GSE3467) revealed overexpression of MET, FN1, and MAPK pathway targets.",
+      "reference_answer": "Paired tumor-normal thyroid transcriptomics (GSE3467, PMID 16365291) identifies robust MAPK target induction including MET and FN1."
+    }
+  ]
+}

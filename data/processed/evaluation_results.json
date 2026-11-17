@@ -1,0 +1,383 @@
+{
+  "mode": "offline",
+  "benchmark_size": 25,
+  "metrics": {
+    "A_retrieval_relevance": {
+      "correct": 24,
+      "incorrect": 1,
+      "total_evaluated": 25,
+      "denominator": 25,
+      "percentage": 96.0,
+      "error_categories": [
+        "BENCH-14: Expected PMID 20473322 not retrieved for 'Transcriptional dynamics during human induced pluripotent stem cell reprogramming'"
+      ]
+    },
+    "B_publication_geo_linking_accuracy": {
+      "correct": 24,
+      "incorrect": 1,
+      "total_evaluated": 25,
+      "denominator": 25,
+      "percentage": 96.0,
+      "error_categories": [
+        "BENCH-01 (PMID 24925914): Expected GEO ['GSE57872'], got []"
+      ]
+    },
+    "C_extraction_accuracy": {
+      "correct": 99,
+      "incorrect": 1,
+      "total_evaluated": 100,
+      "denominator": 100,
+      "percentage": 99.0,
+      "error_categories": [
+        "BENCH-09.experimental_methodology: Expected 'Pretreatment tumor RNA sequencing', got 'Bulk mRNA sequencing of tumor biopsies'"
+      ]
+    },
+    "D_citation_validity": {
+      "correct": 48,
+      "incorrect": 0,
+      "total_evaluated": 48,
+      "denominator": 48,
+      "percentage": 100.0,
+      "error_categories": []
+    },
+    "E_claim_level_grounding": {
+      "correct": 64,
+      "incorrect": 78,
+      "total_evaluated": 142,
+      "denominator": 142,
+      "percentage": 45.07,
+      "error_categories": [
+        "BENCH-01.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-01.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.33).)",
+        "BENCH-01.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-02.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-02.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.20).)",
+        "BENCH-02.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.33).)",
+        "BENCH-03.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-03.experimental_methodology: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-03.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.33).)",
+        "BENCH-04.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-04.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-04.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-05.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-05.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.60).)",
+        "BENCH-05.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-06.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-06.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-07.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-07.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.40).)",
+        "BENCH-07.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-08.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-08.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-09.disease_or_condition: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-09.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-09.experimental_methodology: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.20).)",
+        "BENCH-09.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-10.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-10.experimental_methodology: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.33).)",
+        "BENCH-10.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-11.disease_or_condition: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.00).)",
+        "BENCH-11.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-11.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.60).)",
+        "BENCH-11.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.33).)",
+        "BENCH-12.disease_or_condition: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-12.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-12.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.60).)",
+        "BENCH-12.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-13.disease_or_condition: Status=Unsupported (Numeric values ['19'] in extracted claim do not appear in source text.)",
+        "BENCH-13.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-13.experimental_methodology: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.25).)",
+        "BENCH-13.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-14.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-14.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.40).)",
+        "BENCH-14.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-15.disease_or_condition: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.00).)",
+        "BENCH-15.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-15.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-15.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-16.disease_or_condition: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-16.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-16.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-17.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-17.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-17.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-18.disease_or_condition: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.25).)",
+        "BENCH-18.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-18.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.33).)",
+        "BENCH-18.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.33).)",
+        "BENCH-19.disease_or_condition: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-19.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-19.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-20.disease_or_condition: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.60).)",
+        "BENCH-20.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-20.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-20.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-21.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-21.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.43).)",
+        "BENCH-21.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-22.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-22.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.50).)",
+        "BENCH-22.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-23.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-23.experimental_methodology: Status=Partially supported (Passage located in source (sim=1.00), but claim involves paraphrasing/synthesis (overlap=0.00).)",
+        "BENCH-24.disease_or_condition: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-24.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-24.experimental_methodology: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.12).)",
+        "BENCH-24.genes_or_biomarkers: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)",
+        "BENCH-25.organism: Status=Unsupported (Extracted value is not supported by the cited passage (token_overlap=0.00).)"
+      ]
+    }
+  },
+  "grounding_status_distribution": {
+    "Source unavailable": 108,
+    "Verified": 64,
+    "Unsupported": 57,
+    "Partially supported": 21
+  },
+  "per_question_results": [
+    {
+      "id": "BENCH-01",
+      "domain": "Neuro-Oncology",
+      "query": "Single-cell RNA sequencing intratumoral heterogeneity in primary glioblastoma",
+      "retrieval_pass": true,
+      "linking_pass": false,
+      "linked_gses": []
+    },
+    {
+      "id": "BENCH-02",
+      "domain": "Hematologic Malignancies",
+      "query": "Gene expression profiling of acute myeloid leukemia with FLT3-ITD mutations",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE1159"
+      ]
+    },
+    {
+      "id": "BENCH-03",
+      "domain": "Pulmonology",
+      "query": "Transcriptional profiling of idiopathic pulmonary fibrosis lung tissue",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE32537"
+      ]
+    },
+    {
+      "id": "BENCH-04",
+      "domain": "Autoimmune Rheumatology",
+      "query": "Type I interferon gene expression signature in systemic lupus erythematosus",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE4588"
+      ]
+    },
+    {
+      "id": "BENCH-05",
+      "domain": "Neurodegeneration",
+      "query": "Substantia nigra gene expression changes in sporadic Parkinson disease",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE7621"
+      ]
+    },
+    {
+      "id": "BENCH-06",
+      "domain": "Gastrointestinal Oncology",
+      "query": "Transcriptomic subtyping of microsatellite instability in colorectal cancer",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE39582"
+      ]
+    },
+    {
+      "id": "BENCH-07",
+      "domain": "Nephrology",
+      "query": "Tubulointerstitial gene expression in diabetic chronic kidney disease",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE30122"
+      ]
+    },
+    {
+      "id": "BENCH-08",
+      "domain": "Critical Care & Infectious Disease",
+      "query": "Whole-blood host transcriptomic response in pediatric septic shock",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE13904"
+      ]
+    },
+    {
+      "id": "BENCH-09",
+      "domain": "Immuno-Oncology",
+      "query": "Transcriptomic predictors of anti-PD-1 checkpoint blockade response in metastatic melanoma",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE78220"
+      ]
+    },
+    {
+      "id": "BENCH-10",
+      "domain": "Pancreatic Oncology",
+      "query": "Stromal and tumor molecular subtypes in pancreatic ductal adenocarcinoma",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE71729"
+      ]
+    },
+    {
+      "id": "BENCH-11",
+      "domain": "Cardiology",
+      "query": "Myocardial gene expression remodeling in human dilated cardiomyopathy",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE5406"
+      ]
+    },
+    {
+      "id": "BENCH-12",
+      "domain": "Respiratory Medicine",
+      "query": "Airway epithelial gene expression signatures in severe asthma",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE43696"
+      ]
+    },
+    {
+      "id": "BENCH-13",
+      "domain": "Virology & Host Response",
+      "query": "Nasopharyngeal host transcriptional response to SARS-CoV-2 infection",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE147507"
+      ]
+    },
+    {
+      "id": "BENCH-14",
+      "domain": "Epigenetics & Stem Cell Biology",
+      "query": "Transcriptional dynamics during human induced pluripotent stem cell reprogramming",
+      "retrieval_pass": false,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE21757"
+      ]
+    },
+    {
+      "id": "BENCH-15",
+      "domain": "Inflammatory Bowel Disease",
+      "query": "Colonic mucosal gene expression in ulcerative colitis anti-TNF therapy resistance",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE16879"
+      ]
+    },
+    {
+      "id": "BENCH-16",
+      "domain": "Metabolic Disease & Obesity",
+      "query": "Subcutaneous adipose tissue transcriptomics in human insulin resistance",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE27951"
+      ]
+    },
+    {
+      "id": "BENCH-17",
+      "domain": "Dermatology & Oncology",
+      "query": "Gene expression profiling of cutaneous squamous cell carcinoma progression",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE2503"
+      ]
+    },
+    {
+      "id": "BENCH-18",
+      "domain": "Hematology & Immunology",
+      "query": "Transcriptional landscape of human regulatory T cells versus conventional CD4+ T cells",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE6566"
+      ]
+    },
+    {
+      "id": "BENCH-19",
+      "domain": "Ovarian Oncology",
+      "query": "Molecular subtypes and survival signatures in high-grade serous ovarian cancer",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE9891"
+      ]
+    },
+    {
+      "id": "BENCH-20",
+      "domain": "Musculoskeletal Biology",
+      "query": "Skeletal muscle transcriptomic response to aerobic endurance exercise training",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE18583"
+      ]
+    },
+    {
+      "id": "BENCH-21",
+      "domain": "Prostate Oncology",
+      "query": "Integrative genomic and transcriptomic profiling of primary and metastatic prostate cancer",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE21032"
+      ]
+    },
+    {
+      "id": "BENCH-22",
+      "domain": "Ophthalmology",
+      "query": "Retinal pigment epithelium and choroid gene expression in age-related macular degeneration",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE29801"
+      ]
+    },
+    {
+      "id": "BENCH-23",
+      "domain": "Literature-Only Control (No GEO Dataset)",
+      "query": "Clinical trial outcomes of metformin monotherapy in newly diagnosed gestational diabetes",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": []
+    },
+    {
+      "id": "BENCH-24",
+      "domain": "Literature-Only Control (No GEO Dataset)",
+      "query": "CRISPR-Cas9 base editing mechanism without high-throughput expression dataset",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": []
+    },
+    {
+      "id": "BENCH-25",
+      "domain": "Thyroid Oncology",
+      "query": "Gene expression profiling of BRAF V600E mutated papillary thyroid carcinoma",
+      "retrieval_pass": true,
+      "linking_pass": true,
+      "linked_gses": [
+        "GSE3467"
+      ]
+    }
+  ]
+}
