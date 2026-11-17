@@ -7,7 +7,7 @@ from dataclasses import asdict
 from io import StringIO
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import APIRouter, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
@@ -64,19 +64,13 @@ class GeoLookupRequest(BaseModel):
 
 
 # ---------------------------------------------------------------------------
-# Endpoints
+# Router for API endpoints (mounted at both /api and root / for Vercel compatibility)
 # ---------------------------------------------------------------------------
 
-@app.get("/")
-def root():
-    return {
-        "status": "ok",
-        "service": "Helix AI Scientific Intelligence API",
-        "docs": "/docs",
-    }
+router = APIRouter()
 
 
-@app.get("/api/health")
+@router.get("/health")
 def health_check():
     settings = get_settings()
     return {
@@ -88,7 +82,7 @@ def health_check():
     }
 
 
-@app.get("/api/dashboard")
+@router.get("/dashboard")
 def dashboard():
     p = get_pipeline()
     stats = p.repository.get_dashboard_stats()
@@ -96,7 +90,7 @@ def dashboard():
     return {"stats": stats, "recent_searches": recent}
 
 
-@app.post("/api/pipeline/run")
+@router.post("/pipeline/run")
 def run_pipeline(req: PipelineRunRequest):
     p = get_pipeline()
     try:
@@ -112,13 +106,13 @@ def run_pipeline(req: PipelineRunRequest):
         raise HTTPException(status_code=500, detail=str(exc))
 
 
-@app.get("/api/publications")
+@router.get("/publications")
 def list_publications(q: str | None = Query(default=None)):
     p = get_pipeline()
     return p.repository.get_all_publications(query_filter=q)
 
 
-@app.post("/api/publications/{pmid}/cross-reference")
+@router.post("/publications/{pmid}/cross-reference")
 def cross_reference_publication(pmid: str):
     p = get_pipeline()
     try:
@@ -128,7 +122,7 @@ def cross_reference_publication(pmid: str):
         raise HTTPException(status_code=500, detail=str(exc))
 
 
-@app.post("/api/publications/{pmid}/extract")
+@router.post("/publications/{pmid}/extract")
 def extract_publication(pmid: str):
     p = get_pipeline()
     try:
@@ -139,13 +133,13 @@ def extract_publication(pmid: str):
         raise HTTPException(status_code=500, detail=str(exc))
 
 
-@app.get("/api/geo")
+@router.get("/geo")
 def list_geo_studies():
     p = get_pipeline()
     return p.repository.get_all_geo_studies()
 
 
-@app.post("/api/geo/lookup")
+@router.post("/geo/lookup")
 def geo_lookup(req: GeoLookupRequest):
     p = get_pipeline()
     try:
@@ -162,19 +156,19 @@ def geo_lookup(req: GeoLookupRequest):
         raise HTTPException(status_code=500, detail=str(exc))
 
 
-@app.get("/api/relationships")
+@router.get("/relationships")
 def list_relationships():
     p = get_pipeline()
     return p.repository.get_relationships()
 
 
-@app.get("/api/extractions")
+@router.get("/extractions")
 def list_extractions(pmid: str | None = Query(default=None)):
     p = get_pipeline()
     return p.repository.get_extraction_fields(pmid=pmid)
 
 
-@app.get("/api/verification/logs")
+@router.get("/verification/logs")
 def verification_logs():
     p = get_pipeline()
     return p.repository.get_verification_logs(limit=200)
@@ -190,7 +184,7 @@ EXPORT_DATASETS = {
 }
 
 
-@app.get("/api/export/{dataset_key}")
+@router.get("/export/{dataset_key}")
 def export_csv(dataset_key: str):
     if dataset_key not in EXPORT_DATASETS:
         raise HTTPException(status_code=404, detail=f"Unknown dataset: {dataset_key}")
@@ -205,3 +199,26 @@ def export_csv(dataset_key: str):
         media_type="text/csv",
         headers={"Content-Disposition": f"attachment; filename={dataset_key}.csv"},
     )
+
+
+# Mount router at /api (standard) AND root (for Vercel path-stripping compatibility)
+app.include_router(router, prefix="/api")
+app.include_router(router)
+
+
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "service": "Helix AI Scientific Intelligence API",
+        "docs": "/docs",
+    }
+
+
+@app.get("/api")
+def api_root():
+    return {
+        "status": "ok",
+        "service": "Helix AI Scientific Intelligence API",
+        "docs": "/docs",
+    }
