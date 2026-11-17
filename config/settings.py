@@ -61,7 +61,7 @@ class Settings:
 
     OPENAI_API_KEY: str = field(default_factory=lambda: os.getenv("OPENAI_API_KEY", "").strip())
     OPENAI_BASE_URL: str = field(default_factory=lambda: os.getenv("OPENAI_BASE_URL", "").strip())
-    OPENAI_MODEL: str = field(default_factory=lambda: os.getenv("OPENAI_MODEL", "gemini-2.5-flash").strip())
+    OPENAI_MODEL: str = field(default_factory=lambda: os.getenv("OPENAI_MODEL", "gemini-flash-lite-latest").strip())
     OPENAI_TEMPERATURE: float = 0.0
     OPENAI_MAX_TOKENS: int = 2000
 
