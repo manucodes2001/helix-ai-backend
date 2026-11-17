@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from typing import Any
 
 from pydantic import BaseModel, Field
@@ -99,19 +100,42 @@ CRITICAL RULES:
             + ". Each key must map to an object with keys: value (string), supporting_passage (string), is_available (boolean)."
         )
 
-        try:
-            response = client.chat.completions.create(
-                model=self.model,
-                temperature=self.settings.OPENAI_TEMPERATURE,
-                max_tokens=self.settings.OPENAI_MAX_TOKENS,
-                response_format={"type": "json_object"},
-                messages=[
-                    {"role": "system", "content": self.SYSTEM_PROMPT},
-                    {"role": "user", "content": user_prompt},
-                ],
-            )
-        except Exception as exc:
-            raise OpenAIExtractionError(f"OpenAI API call failed for PMID {pmid}: {exc}") from exc
+        max_retries = 3
+        backoff = 1.5
+        response = None
+
+        for attempt in range(max_retries):
+            try:
+                response = client.chat.completions.create(
+                    model=self.model,
+                    temperature=self.settings.OPENAI_TEMPERATURE,
+                    max_tokens=self.settings.OPENAI_MAX_TOKENS,
+                    response_format={"type": "json_object"},
+                    messages=[
+                        {"role": "system", "content": self.SYSTEM_PROMPT},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                )
+                break
+            except Exception as exc:
+                err_str = str(exc)
+                status_code = getattr(exc, "status_code", None)
+                is_transient = (
+                    status_code in (429, 500, 502, 503, 504)
+                    or "503" in err_str
+                    or "429" in err_str
+                    or "high demand" in err_str.lower()
+                    or "rate limit" in err_str.lower()
+                )
+                if attempt < max_retries - 1 and is_transient:
+                    logger.warning(
+                        f"Transient error calling OpenAI/Gemini for PMID {pmid} (attempt {attempt + 1}/{max_retries}): {exc}. "
+                        f"Retrying in {backoff:.1f}s..."
+                    )
+                    time.sleep(backoff)
+                    backoff *= 2.0
+                else:
+                    raise OpenAIExtractionError(f"OpenAI API call failed for PMID {pmid}: {exc}") from exc
 
         raw_content = response.choices[0].message.content or "{}"
         parsed = safe_json_loads(raw_content, default={})

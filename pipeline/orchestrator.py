@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from pathlib import Path
 
 from config.settings import Settings, get_settings
@@ -82,6 +83,7 @@ class HelixResearchPipeline:
                         remote_pmid_check=remote_id_verify,
                     )
                     extracted_papers += 1
+                    time.sleep(0.3)
                 except ConfigurationError as exc:
                     errors.append(str(exc))
                     run_extraction = False
